@@ -170,7 +170,7 @@ public class SecretListFragment extends Fragment implements OnRefreshListener<Li
 								BbsTopic[] topics = httpBbsTopicsResult.topics;
 								for (BbsTopic bbsTopic : topics) {
                                     topicsList.add(bbsTopic);
-                                    if (bbsTopic.hasImageUrl()) {
+                                    if (bbsTopic.hasImageUrl() && bbsTopic.getImageUrl() != "") {
                                         //ImageHelper.getInstance().getImageLoader().displayImage(AppProperty.SERVER_URL + bbsTopic.getImageUrl(), view);                                       topicsList.add(bbsTopic);
                                         if(MemoryCacher.getInstance().getBitmapFromMemCache(bbsTopic.getImageUrl()) == null){
                                             MemoryCacher.getInstance().getBitmapFromWeb(AppProperty.SERVER_URL + bbsTopic.getImageUrl());

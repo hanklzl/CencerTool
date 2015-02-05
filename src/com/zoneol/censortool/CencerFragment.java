@@ -63,7 +63,7 @@ public class CencerFragment extends DialogFragment{
         Bitmap bitmap = null;
         imageView = LayoutInflater.from(getActivity()).inflate(R.layout.secret_image,null);
         ImageView image = (ImageView) imageView.findViewById(R.id.secret_image);
-        if(mImagePath != null){
+        if(mImagePath != null && mImagePath != ""){
 //
             bitmap = MemoryCacher.getInstance().getBitmapFromMemCache(AppProperty.SERVER_URL + mImagePath);
             if(bitmap != null){
