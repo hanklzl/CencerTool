@@ -85,6 +85,7 @@ public class SecretListFragment extends Fragment implements OnRefreshListener<Li
 		getActivity().setTitle("秘密");
 		super.onCreate(savedInstanceState);
         ImageHelper.getInstance().init(getActivity());
+        MemoryCacher.getInstance().init(getActivity());
 	}
 
 	@Override
@@ -168,31 +169,14 @@ public class SecretListFragment extends Fragment implements OnRefreshListener<Li
 										//.getTopicsList();
 								BbsTopic[] topics = httpBbsTopicsResult.topics;
 								for (BbsTopic bbsTopic : topics) {
+                                    topicsList.add(bbsTopic);
                                     if (bbsTopic.hasImageUrl()) {
-//                                        if (!ImageLoader.getInstance().isInited()) {
-//                                            Log.d("imageloader","init imageloader");
-//                                            ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity())
-//                                                    .memoryCacheExtraOptions(480, 800)
-//                                                    .threadPoolSize(5)
-//                                                    .memoryCacheSize(10 * 1024 * 1024)
-//                                                    .diskCacheSize(50 * 1024 * 1024)
-//                                                    .tasksProcessingOrder(QueueProcessingType.LIFO)
-//                                                    .diskCacheFileNameGenerator(new HashCodeFileNameGenerator())
-//                                                    .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
-//                                                            // .imageDecoder(decoder)
-//                                                    .imageDownloader(
-//                                                            new BaseImageDownloader(getActivity(), 5 * 1000, 30 * 1000))
-//                                                    .build();
-//                                            ImageLoader.getInstance().init(config);
-//                                        }
-                                        ImageHelper.getInstance().getImageLoader().displayImage(AppProperty.SERVER_URL + bbsTopic.getImageUrl(), view);
-                                        //ImageLoader.getInstance().displayImage(AppProperty.SERVER_URL + mImagePath, image);
-                                        topicsList.add(bbsTopic);
+                                        //ImageHelper.getInstance().getImageLoader().displayImage(AppProperty.SERVER_URL + bbsTopic.getImageUrl(), view);                                       topicsList.add(bbsTopic);
+                                        if(MemoryCacher.getInstance().getBitmapFromMemCache(bbsTopic.getImageUrl()) == null){
+                                            MemoryCacher.getInstance().getBitmapFromWeb(AppProperty.SERVER_URL + bbsTopic.getImageUrl());
+                                        }
                                     }
                                 }
-
-
-
 								onReCallResult(what, getTopBbslist(topicsList));
 
 								return;

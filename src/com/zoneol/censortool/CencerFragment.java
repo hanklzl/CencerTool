@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -59,30 +60,20 @@ public class CencerFragment extends DialogFragment{
 	@NonNull
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
         View imageView;
+        Bitmap bitmap = null;
         imageView = LayoutInflater.from(getActivity()).inflate(R.layout.secret_image,null);
         ImageView image = (ImageView) imageView.findViewById(R.id.secret_image);
         if(mImagePath != null){
-//            if(!ImageLoader.getInstance().isInited())
-//            {
-//                Log.d("imageloader","init imageloader");
-//                ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity())
-//                        .memoryCacheExtraOptions(480, 800)
-//                        .threadPoolSize(5)
-//                        .memoryCacheSize(10 * 1024 * 1024)
-//                        .diskCacheSize(50 * 1024 * 1024)
-//                        .tasksProcessingOrder(QueueProcessingType.LIFO)
-//                        .diskCacheFileNameGenerator(new HashCodeFileNameGenerator())
-//                        .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
-//                                // .imageDecoder(decoder)
-//                        .imageDownloader(
-//                                new BaseImageDownloader(getActivity(), 5 * 1000, 30 * 1000))
-//                        .build();
-//                ImageLoader.getInstance().init(config);
-//            }
-            ImageHelper.getInstance().getImageLoader().getLoadingUriForView(image);
-            ImageHelper.getInstance().getImageLoader().displayImage(AppProperty.SERVER_URL + mImagePath, image);
+//
+            bitmap = MemoryCacher.getInstance().getBitmapFromMemCache(AppProperty.SERVER_URL + mImagePath);
+            if(bitmap != null){
+                image.setImageBitmap(bitmap);
+                Log.d("bitmap", "load bitmap from memory cache");
+            }else {
+                Log.d("image", "image loader load image: " + AppProperty.SERVER_URL + mImagePath);
+                ImageHelper.getInstance().getImageLoader().displayImage(AppProperty.SERVER_URL + mImagePath, image);
+            }
 
-            Log.d("image", "load image: " + AppProperty.SERVER_URL + mImagePath);
         }
         return new AlertDialog.Builder(getActivity())
 			.setTitle("该说说是否审核通过")
