@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pushmsg_center_no_more_msg">Already the end</string>
+    <string name="pushmsg_center_pull_up_text">Loosen load more</string>
+    <string name="pushmsg_center_pull_down_text">Pull down refresh</string>
+    <string name="pushmsg_center_pull_release_text">Release for more</string>
+    <string name="pushmsg_center_pull_down_update_time">Last update : </string>
+    <string name="pushmsg_center_load_more_ongoing_text">Loading</string>
+    <string name="xsearch_loading">Loading…</string>
+
+    <!-- 加载图片失败时的提示文本 -->
+    <string name="picture_load_image_failed">Click on the screen to reload</string>
+    <!-- 加载中提示 -->
+    <string name="picture_image_loading">Loading…</string>
+    
+    <!-- 下拉刷新和上拉加载更多的文本 -->
+    <string name="pull_to_refresh_header_hint_normal">@string/pushmsg_center_pull_down_text</string>
+    <string name="pull_to_refresh_header_hint_normal2">Pull refresh</string>
+    <string name="pull_to_refresh_header_hint_ready">Loosen load</string>
+    <string name="pull_to_refresh_header_hint_loading">@string/pushmsg_center_load_more_ongoing_text</string>
+    <string name="pull_to_refresh_header_last_time">@string/pushmsg_center_pull_down_update_time</string>
+    <string name="pull_to_refresh_footer_hint_ready">Loosen load more</string>
+    <string name="pull_to_refresh_refreshing_label">@string/pull_to_refresh_header_hint_loading</string>
+    <string name="pull_to_refresh_no_more_data">@string/pushmsg_center_no_more_msg</string>
+    <string name="pull_to_refresh_network_error">Network error, check the network</string>
+    
+    <!-- 图片保存的文字 -->
+    <string name="picture_save_succeed">Images are saved to phase</string>
+    <string name="picture_save_fail">Failed to save the image</string>
+    <string name="picture_next_album">The next group:</string>
+    <string name="picture_previous_album">The previous group:</string>
+    
+</resources>

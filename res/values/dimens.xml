@@ -1,0 +1,24 @@
+<resources>
+    <!-- nagivate -->
+    <dimen name="nagivate_main_tab_img_50dp">50dp</dimen> 
+    <dimen name="nagivate_main_tab_img_45dp">45dp</dimen> 
+	<!-- secret -->
+	<dimen name="secret_bottom_btn_55dp">55dp</dimen> 
+	<dimen name="secret_bottom_btn_width_300dp">300dp</dimen>
+	<dimen name="secret_bottom_btn_height_45dp">45dp</dimen>
+	<dimen name="secret_bottom_item_top_10dp">10dp</dimen>
+	<dimen name="secret_bottom_item_image_20dp">20dp</dimen>
+	<dimen name="secret_bottom_item_image_15dp">15dp</dimen>
+	<dimen name="secret_bottom_item_bottom_liearn_250dp">250dp</dimen>
+	<dimen name="secret_bottom_item_margin_3dp">3dp</dimen>
+	<dimen name="divider_bg_height">1dp</dimen>
+	<!-- secret open -->
+	<dimen name="secret_open_top_margin_10dp">10dp</dimen>
+	<dimen name="secret_open_top_tv_margin_5dp">5dp</dimen>
+	<dimen name="secret_open_top_cb_margin_left_20dp">20dp</dimen>
+	<!-- test_sp -->
+	<dimen name="secret_bottom_item_text_22sp">22sp</dimen>
+	<dimen name="secret_bottom_item_text_18sp">18sp</dimen>
+	<dimen name="secret_bottom_item_text_16sp">16sp</dimen>
+	<dimen name="secret_bottom_item_text_15sp">15sp</dimen>
+</resources>

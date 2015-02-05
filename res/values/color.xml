@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColor1">#CBDDFF</color>
+    <color name="textColor2">#ffffff</color>
+    <color name="textColor3">#4cffffff</color>
+    <color name="textColor_50">#80ffffff</color>
+    <color name="textColor_50black">#80000000</color>
+    <color name="transparence">#00000000</color>
+    <color name="bgColor1">#990066</color>
+    <color name="underline">#99ffffff</color>
+    <color name="profile_bg">#333333</color>
+    <color name="pink">#C44C9D</color>
+    <drawable name="btnbgColor">#00000000</drawable >
+     <drawable name="btn_backcolor2">#33ffffff</drawable >
+    <color name="btn_backcolor">#33ffffff</color>
+    <color name="btn_backcolor3">#0affffff</color>
+    <color name="btn_backcolor2">#44ffffff</color>
+    <color name="main_tab_backcolor">#66ffffff</color>
+    <color name="buttondialog_title_color">#000000</color>
+    <color name="color_red">#ff0000</color>
+    
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="spinner_back_color">#424142</color>
+    
+</resources>
